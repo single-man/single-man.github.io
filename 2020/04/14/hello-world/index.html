@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://single-man.github.io">
-  <title>Hello World | 徐文杰的个人博客</title>
+  <title>连接池的使用 | 徐文杰的个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Hello">
+  <meta name="description" content="c3p0使用步骤1. 导入jar包（两个）：c3p0-0.9.1.2.jar  commons-dbutils-1.4.jar  mysql-connector-java-5.0.8-bin.jar 2. 定义配置文件：     * 名称：c3p0.properties 或  c3p0-config.xml     * 路径：直接将文件放置src目录下即可">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
+<meta property="og:title" content="连接池的使用">
 <meta property="og:url" content="https://single-man.github.io/2020/04/14/hello-world/index.html">
 <meta property="og:site_name" content="徐文杰的个人博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Hello">
+<meta property="og:description" content="c3p0使用步骤1. 导入jar包（两个）：c3p0-0.9.1.2.jar  commons-dbutils-1.4.jar  mysql-connector-java-5.0.8-bin.jar 2. 定义配置文件：     * 名称：c3p0.properties 或  c3p0-config.xml     * 路径：直接将文件放置src目录下即可">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-14T15:35:20.936Z">
-<meta property="article:modified_time" content="2020-04-15T01:38:08.445Z">
+<meta property="article:modified_time" content="2020-04-15T12:35:00.994Z">
 <meta property="article:author" content="徐文杰">
 <meta name="twitter:card" content="summary">
   
@@ -99,7 +99,7 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" href="#" title="GitHub" target="_blank"><i class="icon-github"></i></a>
+					<a class="github" href="https://github.com/single-man/single-man.github.io.git" title="GitHub" target="_blank"><i class="icon-github"></i></a>
 				
 					<a class="gitee" href="#" title="gitee" target="_blank"><i class="icon-gitee"></i></a>
 				
@@ -164,7 +164,7 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="GitHub"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/single-man/single-man.github.io.git" title="GitHub"><i class="icon-github"></i></a>
 			        
 						<a class="gitee" target="_blank" href="#" title="gitee"><i class="icon-gitee"></i></a>
 			        
@@ -206,7 +206,7 @@
   
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      连接池的使用
     </h1>
   
 
@@ -232,7 +232,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">74字</span>
+      <span class="post-count">557字</span>
     </span>
   </span>
 
@@ -241,7 +241,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">2分</span>
     </span>
   </span>
 </div>
@@ -252,20 +252,57 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Hello-Hexo"><a href="#Hello-Hexo" class="headerlink" title="Hello Hexo"></a>Hello Hexo</h2><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+    <h6 id="c3p0使用步骤"><a href="#c3p0使用步骤" class="headerlink" title="c3p0使用步骤"></a>c3p0使用步骤</h6><pre><code>1. 导入jar包（两个）：c3p0-0.9.1.2.jar  commons-dbutils-1.4.jar  mysql-connector-java-5.0.8-bin.jar
+2. 定义配置文件：
+    * 名称：c3p0.properties 或  c3p0-config.xml
+    * 路径：直接将文件放置src目录下即可</code></pre><a id="more"></a>
+<pre><code>3. 创建核心对象，数据库连接池对象 ComboPooledDataSource
+4. 获取连接：getConnection
+5. 关键代码代码：
+    1.  //创建数据库连接池对象
+        DataSource ds=new ComboPooledDataSource();
+        //获取连接对象
+        Connection conn = ds.getConnection();
+        //打印
+        System.out.println(conn);</code></pre><h6 id="Druid：数据库连接池实现技术，由阿里巴巴提供"><a href="#Druid：数据库连接池实现技术，由阿里巴巴提供" class="headerlink" title="Druid：数据库连接池实现技术，由阿里巴巴提供"></a>Druid：数据库连接池实现技术，由阿里巴巴提供</h6><pre><code>      1.导入jar包：druid-1.0.9.jar
+      2.定义配置文件：
+          *是properties形式的
+          *可以叫任意名称，可以放置在任意目录下
+      3.获取配置文件Properties
+      4.获取数据库连接池：通过工厂类来获取 DruidDataSourceFactory
+      5.获取连接对象：getConnection
+      6.关键代码：
+          //加载配置文件
+          Properties pro=new Properties();
+          InputStream is = DruidDemo01.class.getClassLoader().getResourceAsStream(&quot;druid.properties&quot;);
+          pro.load(is);
+          //获取连接池对象
+          DataSource ds = DruidDataSourceFactory.createDataSource(pro);
+          //获取连接
+          Connection conn = ds.getConnection();
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+2、定义工具类
+    1. 定义一个类 JDBCUtils
+    2. 提供静态代码块加载配置文件，初始化连接池对象
+    3. 提供方法
+        1. 获取连接方法：通过数据库连接池获取连接
+        2. 释放资源
+        3. 获取连接池的方法</code></pre><h6 id="Spring-JDBC"><a href="#Spring-JDBC" class="headerlink" title="Spring JDBC"></a>Spring JDBC</h6><pre><code>* Spring框架对JDBC的简单封装。提供了一个JDBCTemplate对象简化JDBC的开发
+* 步骤：
+    1. 导入jar包
+    2. 创建JdbcTemplate对象。依赖于数据源DataSource
+        * JdbcTemplate template=new JdbcTemplet(ds);</code></pre><!--more-->            
+<pre><code>3. 调用JdbcTemplate的方法完成CRUD的操作
+    * update():执行DML语句增、删、改语句
+    * queryForMap():查询结果,将结果封装为Map集合，将列名作为key，将值为value
+        * 注意：这个方法查询的结果集长度只能是1
+    * queryForList():查询结果,将结果封装为List集合
+        * 注意：将每一条记录封装为一个Map集合，再将Map集合装载到List集合中
+    * query():查询结果,将结果封装为JavaBean对象
+        * 注意：query方法的参数：RowMapper
+            * 一般我们使用BeanPropertyRowMapper实现类，可以完成数据到JavaBean的自动封装
+    * queryForObject():查询结果，将结果封装为对象
+        * 一般用于聚合函数的查询</code></pre>
     
 
     
@@ -289,7 +326,7 @@
                   
                   
                   <div class="reward-box-item">
-                    <img class="reward-img" src="/img/weixin.png">
+                    <img class="reward-img" src="/img/weixin.jpg">
                     <span class="reward-type">微信</span>
                   </div>
                   
@@ -311,7 +348,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://single-man.github.io/2020/04/14/hello-world/" title="Hello World" target="_blank">https://single-man.github.io/2020/04/14/hello-world/</a>
+          <a href="https://single-man.github.io/2020/04/14/hello-world/" title="连接池的使用" target="_blank">https://single-man.github.io/2020/04/14/hello-world/</a>
         </li>
         
         <li>
@@ -397,7 +434,7 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          &#39;我的第一篇博客&#39;
+          注解
         
       </div>
     </a>
@@ -609,16 +646,16 @@
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="https://zhousiwei.gitee.io/ibooks/" target="_blank" class="search-title" title="记录工作和学习过程中的笔记：Java、前端开发、Hexo博客、聚合支付、Linux笔记、ElasticSearch、ELK日志分析">
+              <a href="https://zhousiwei.gitee.io/ibooks/" target="_blank" class="search-title" title="记录学习过程中的笔记：Java小白、前后端学习中、Hexo博客、聚合支付、Linux笔记">
                 
-                  <img src="https://zhousiwei.gitee.io/ibooks/favicon.ico">
+                  <i class="icon-link icon"></i>
                 
                 技术笔记
               </a>
             </li>
           
             <li class="search-li">
-              <a href="https://github.com/JoeyBling" target="_blank" class="search-title" >
+              <a href="https://github.com/single-man/single-man.github.io.git" target="_blank" class="search-title" >
                 
                   <i class="icon-link icon"></i>
                 
@@ -627,7 +664,7 @@
             </li>
           
             <li class="search-li">
-              <a href="https://gitee.com/zhousiwei" target="_blank" class="search-title" >
+              <a href="/null" target="_blank" class="search-title" >
                 
                   <i class="icon-link icon"></i>
                 
@@ -636,7 +673,7 @@
             </li>
           
             <li class="search-li">
-              <a href="https://www.jianshu.com/u/02cbf31a043a" target="_blank" class="search-title" >
+              <a href="/null" target="_blank" class="search-title" >
                 
                   <i class="icon-link icon"></i>
                 
@@ -645,7 +682,7 @@
             </li>
           
             <li class="search-li">
-              <a href="https://blog.csdn.net/qq_30930805" target="_blank" class="search-title" >
+              <a href="https://blog.csdn.net/weixin_43732821" target="_blank" class="search-title" >
                 
                   <i class="icon-link icon"></i>
                 
@@ -662,7 +699,7 @@
     	<section class="tools-section tools-section-me" q-show="aboutme">
         
           
-  	  		<div class="aboutme-wrap" id="aboutme">主要涉及技术：<br>Java后端开发、聚合支付、<br>公众号开发、开源爱好者、Linux<br><br>联系QQ:2434387555<br><br>很惭愧<br><br>只做了一点微小的工作<br>谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="aboutme">主要涉及技术：<br>Java后端开发,小白一个<br>学习爱好者、致力于java Linux<br><br>联系QQ:1975936508<br><br>很惭愧<br><br>只做了一点微小的工作<br>谢谢大家</div>
   	  	
     	</section>
     

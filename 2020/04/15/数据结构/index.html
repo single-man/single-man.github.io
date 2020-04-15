@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://single-man.github.io">
-  <title>注解 | 徐文杰的个人博客</title>
+  <title>数据结构 | 徐文杰的个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="注解1.概念：说明程序，给计算机看的         * jdk1.5之后的新特性         * 说明程序         * 使用注解：@注解名称 2、作用分类：     * 编写文档：通过代码里标识的注解生成文档【生成文档doc文档】     * 代码分析：通过代码里标识的注解对代码进行分析【使用反射】     * 编译检查：通过代码里标识的注解让编译器能够实现基本的编译检查【overr">
+  <meta name="description" content="数据结构与算法    数据结构？        数据：描述客观事物的字、字符、图片等一些未经处理的符号。        数据结构：数据元素以及数据元素之间的关系按照某种特定的结构存储的元素集合">
 <meta property="og:type" content="article">
-<meta property="og:title" content="注解">
-<meta property="og:url" content="https://single-man.github.io/2020/04/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:title" content="数据结构">
+<meta property="og:url" content="https://single-man.github.io/2020/04/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.html">
 <meta property="og:site_name" content="徐文杰的个人博客">
-<meta property="og:description" content="注解1.概念：说明程序，给计算机看的         * jdk1.5之后的新特性         * 说明程序         * 使用注解：@注解名称 2、作用分类：     * 编写文档：通过代码里标识的注解生成文档【生成文档doc文档】     * 代码分析：通过代码里标识的注解对代码进行分析【使用反射】     * 编译检查：通过代码里标识的注解让编译器能够实现基本的编译检查【overr">
+<meta property="og:description" content="数据结构与算法    数据结构？        数据：描述客观事物的字、字符、图片等一些未经处理的符号。        数据结构：数据元素以及数据元素之间的关系按照某种特定的结构存储的元素集合">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-04-15T05:46:41.000Z">
-<meta property="article:modified_time" content="2020-04-15T12:40:30.907Z">
+<meta property="article:published_time" content="2020-04-15T12:42:47.610Z">
+<meta property="article:modified_time" content="2020-04-15T12:47:33.286Z">
 <meta property="article:author" content="徐文杰">
 <meta name="twitter:card" content="summary">
   
@@ -199,14 +199,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-我的第一篇博客" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-数据结构" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      注解
+      数据结构
     </h1>
   
 
@@ -218,8 +218,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/04/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-        <time datetime="2020-04-15T05:46:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-15</time>
+<a href="/2020/04/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="archive-article-date">
+        <time datetime="2020-04-15T12:42:47.610Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-15</time>
 </a>
 
   
@@ -232,7 +232,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">480字</span>
+      <span class="post-count">1.5k字</span>
     </span>
   </span>
 
@@ -241,7 +241,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">6分</span>
     </span>
   </span>
 </div>
@@ -252,47 +252,78 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h6 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h6><pre><code>1.概念：说明程序，给计算机看的
-        * jdk1.5之后的新特性
-        * 说明程序
-        * 使用注解：@注解名称
-2、作用分类：
-    * 编写文档：通过代码里标识的注解生成文档【生成文档doc文档】
-    * 代码分析：通过代码里标识的注解对代码进行分析【使用反射】
-    * 编译检查：通过代码里标识的注解让编译器能够实现基本的编译检查【override】</code></pre><a id="more"></a>
-<pre><code>3、JDK中预定义的一些注解
-    * @Override：检测被该注解注解的方法是否是继承父类（接口）
-    * @Deprecated：将该注解标注的内容表示已过时
-    * @SuppressWarnings：压制警告
-4、自定义注解
-    * 格式：
-        * public @interface 注解名称{
-               属性列表;  (抽查的成员方法)
-        * }
-    * 本质：
-        * 本质上就是一个接口，该接口默认继承Annotation接口
-        * public interface MyAnno extends java.lang.annotation.Annotation{}
-    * 属性：接口中的抽象方法
-        * 要求：
-            1.属性的返回值类型有如下取值
-                * 基本数据类型
-                * String
-                * 枚举
-                * 注解
-                * 以上类型的数组
-            2.定义了属性，在使用时要给属性赋值
-                * 如果定义属性时，使用default关键字给属性默认初始化值，则使用注解时，属性默认取值
-                * 如果只有一个属性需要赋值，并且属性的名称是value，则value可以省略，直接定义值即可
-                * 数组赋值时，值使用大括号“{}”包裹。如果数组只有一个值，则{}省略
-    * 元注解：用于描述注解的注解
-        * @Target：描述注解能够作用的位置
-            * ElementType取值：
-                * Type：只能作用在类上
-                * METHOD：可以作用于方法上
-                * FIELD：可以作用于成员变量上
-        * @Retention：描述注解被保留的阶段（java代码分三个阶段）
-        * @Documented：描述注解是否被抽取到api文档中
-        * @Inherited：描述注解是否被子类继承</code></pre>
+    <p><strong>数据结构与算法</strong><br>    数据结构？<br>        数据：描述客观事物的字、字符、图片等一些未经处理的符号。<br>        数据结构：数据元素以及数据元素之间的关系按照某种特定的结构存储的元素集合</p>
+<a id="more"></a>
+<pre><code>逻辑结构？
+    数据的逻辑结构是从数据的逻辑关系上描述数据的（数据的逻辑结构与数据的存储无关）
+        1、集合
+            数据元素之间同属一个集合，元素与元素之间没有必然联系
+
+        2、线性结构
+            数据元素之间存在一对一的关系
+
+        3、树形结构
+            数据元素之间存在一对多的关系
+
+        4、图形结构
+            数据元素之间存在多对多的关系
+存储结构？
+    逻辑结构在计算机中的存储实现（既要存储数据，也要存储数据之间的逻辑关系）
+        1、顺序存储结构（数组）
+            一组连续的存储单元存储数据
+            优点：存储效率高、元素之间的逻辑关系没有额外的占用空间、元素可以随机存取、易查找
+            缺点：不便于数据修改、对元素的插入或删除操作可能需要移动一系列元素
+        2、链式存储结构
+            每个元素用一个内存节点存储，每个节点单独分配，节点的地址不一定连续
+            优点：便于数据修改
+            缺点：存储空间的利用率低，因为存储单元有一部分被用来存储节点之间的逻辑关系
+
+        3、索引存储结构
+            存储元素的同时还建立附加的索引表
+            优点：查找效率高
+            缺点：需要建立索引表，从而增加了空间开销
+
+        4、哈希（散列）存储结构
+            根据元素的关键字通过哈希（散列）函数直接计算出一个值，并将这个值作为该元素的存储地址
+            优点：查找速度快，给出待查元素的关键字就可以立即计算出该元素的存储地址
+            缺点：哈希存储只存储元素的数据，不存储元素的逻辑关系，哈希存储只适合对元素进行快查找和插入
+
+什么是算法？
+    算法是对特定问题求解步骤的一种描述，它是指令的有限序列
+
+    算法的特性：
+        1、有穷性：执行有穷步后结束
+        2、确定性：一个输入对应一个输出，不能有二义性
+        3、可行性：每个动作都能被机械地运行
+        4、有输入：一个算法有一个或零个输入
+        5、有输出：一个算法有一个或多个输出
+
+    算法和程序的区别：
+        【说明】程序=数据结构+算法。程序是指某种语言对算法的具体实现，即具体要怎么做。
+                而算法侧重解决问题的方法描述，即具体做什么
+
+    算法设计的目标：
+        1、正确性：要求算法能够正确执行
+        2、可使用性：要求算法能够很方便地使用
+        3、可读性：算法的逻辑必须清晰、简单、易于让人理解
+        4、健壮性：要求算法具有很好的容错性
+        5、高效率与低存储需求：执行时间短、存储效率高
+
+算法的分析
+    算法分析就是分析算法占用计算机资源的多少。主要是分析CPU时间和内存空间。
+    时间性能分析：分析算法占用CPU时间的多少
+    空间性能分析：分析算法占用内存空间的多少
+
+    1、算法的时间复杂度</code></pre><p>一、数组</p>
+<pre><code>1、什么是数组？
+    数组是一种基本的数据结构，用于按顺序存储元素的集合。数组中的每个元素都可通过数组下标来识别。
+
+2、静态数组
+    静态数组初始化后，存储的大小就确定了，所以有可能出现存储空间不足或存储空间浪费的现象
+        常用的方法：
+            1、获取长度:a.length;
+            2、自动排序：Arrays.sort();</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">				<span class="comment">// 1. Initialize</span></span><br><span class="line">				<span class="keyword">int</span>[] a0 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</span><br><span class="line">				<span class="keyword">int</span>[] a1 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 2. Get Length</span></span><br><span class="line">				System.out.println(<span class="string">"The size of a1 is: "</span> + a1.length);</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 3. Access Element</span></span><br><span class="line">				System.out.println(<span class="string">"The first element is: "</span> + a1[<span class="number">0</span>]);</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 4. Iterate all Elements</span></span><br><span class="line">				System.out.print(<span class="string">"[Version 1] The contents of a1 are:"</span>);</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a1.length; ++i) &#123;</span><br><span class="line">					System.out.print(<span class="string">" "</span> + a1[i]);</span><br><span class="line">				&#125;</span><br><span class="line">				</span><br><span class="line">				System.out.println();</span><br><span class="line">				System.out.print(<span class="string">"[Version 2] The contents of a1 are:"</span>);</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> item: a1) &#123;</span><br><span class="line">					System.out.print(<span class="string">" "</span> + item);</span><br><span class="line">				&#125;</span><br><span class="line">				System.out.println();</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 5. Modify Element</span></span><br><span class="line">				a1[<span class="number">0</span>] = <span class="number">4</span>;</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 6. Sort</span></span><br><span class="line">				Arrays.sort(a1);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	<span class="number">3</span>、动态数组</span><br><span class="line">		动态数组是一个随机存取的列表数据结构，但大小是可变的（ArrayList）</span><br><span class="line">		常用的方法：</span><br><span class="line">			<span class="number">1</span>、获取元素：get(index);</span><br><span class="line">			<span class="number">2</span>、获取长度：size();</span><br><span class="line">			<span class="number">3</span>、元素赋值：set(index,element);</span><br><span class="line">			<span class="number">4</span>、自动排序：Collections.sort();</span><br><span class="line">			<span class="number">5</span>、删除元素：remove(index);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">				<span class="comment">// 1. initialize</span></span><br><span class="line">				List&lt;Integer&gt; v0 = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">				List&lt;Integer&gt; v1;                           <span class="comment">// v1 == null</span></span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 2. cast an array to a vector</span></span><br><span class="line">				Integer[] a = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;;</span><br><span class="line">				v1 = <span class="keyword">new</span> ArrayList&lt;&gt;(Arrays.asList(a));</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 3. make a copy</span></span><br><span class="line">				List&lt;Integer&gt; v2 = v1;                      <span class="comment">// another reference to v1</span></span><br><span class="line">				List&lt;Integer&gt; v3 = <span class="keyword">new</span> ArrayList&lt;&gt;(v1);     <span class="comment">// make an actual copy of v1</span></span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 3. get length</span></span><br><span class="line">				System.out.println(<span class="string">"The size of v1 is: "</span> + v1.size());;</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 4. access element</span></span><br><span class="line">				System.out.println(<span class="string">"The first element in v1 is: "</span> + v1.get(<span class="number">0</span>));</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 5. iterate the vector</span></span><br><span class="line">				System.out.print(<span class="string">"[Version 1] The contents of v1 are:"</span>);</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; v1.size(); ++i) &#123;</span><br><span class="line">					System.out.print(<span class="string">" "</span> + v1.get(i));</span><br><span class="line">				&#125;</span><br><span class="line">				System.out.println();</span><br><span class="line">				System.out.print(<span class="string">"[Version 2] The contents of v1 are:"</span>);</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> item : v1) &#123;</span><br><span class="line">					System.out.print(<span class="string">" "</span> + item);</span><br><span class="line">				&#125;</span><br><span class="line">				System.out.println();</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 6. modify element</span></span><br><span class="line">				v2.set(<span class="number">0</span>, <span class="number">5</span>);       <span class="comment">// modify v2 will actually modify v1</span></span><br><span class="line">				System.out.println(<span class="string">"The first element in v1 is: "</span> + v1.get(<span class="number">0</span>));</span><br><span class="line">				v3.set(<span class="number">0</span>, -<span class="number">1</span>);</span><br><span class="line">				System.out.println(<span class="string">"The first element in v1 is: "</span> + v1.get(<span class="number">0</span>));</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 7. sort</span></span><br><span class="line">				Collections.sort(v1);</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 8. add new element at the end of the vector</span></span><br><span class="line">				v1.add(-<span class="number">1</span>);		<span class="comment">//没有标明索引，自动添加到最后一元素</span></span><br><span class="line">				v1.add(<span class="number">1</span>, <span class="number">6</span>);</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 9. delete the last element</span></span><br><span class="line">				v1.remove(v1.size() - <span class="number">1</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
     
 
     
@@ -338,7 +369,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://single-man.github.io/2020/04/15/我的第一篇博客/" title="注解" target="_blank">https://single-man.github.io/2020/04/15/我的第一篇博客/</a>
+          <a href="https://single-man.github.io/2020/04/15/数据结构/" title="数据结构" target="_blank">https://single-man.github.io/2020/04/15/数据结构/</a>
         </li>
         
         <li>
@@ -405,7 +436,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://single-man.github.io/2020/04/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://single-man.github.io/2020/04/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -420,18 +451,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/04/15/Cooke/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Cooke
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/04/14/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">连接池的使用</div>
+    <a href="/2020/04/15/Cooke/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Cooke</div>
       <i class="icon-circle-right"></i>
     </a>
   
