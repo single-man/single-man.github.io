@@ -6,21 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://single-man.github.io">
-  <title>数据结构 | 徐文杰的个人博客</title>
+  <title>十大经典排序算法 | 徐文杰的个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="数据结构与算法    数据结构？        数据：描述客观事物的字、字符、图片等一些未经处理的符号。        数据结构：数据元素以及数据元素之间的关系按照某种特定的结构存储的元素集合">
+  <meta name="description" content="十大经典排序算法（图解）一、排序算法1. 冒泡排序原理 冒泡排序(Bubble Sort)是一种简单的排序算法，它通过一次比较两个相邻的元素，看两个元素是否满足大小关系要求，如果不满足则交换两个元素。每一次冒泡都会至少产生一次数据移动，直到将最小的元素“浮”到数列顶端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据结构">
-<meta property="og:url" content="https://single-man.github.io/2020/04/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.html">
+<meta property="og:title" content="十大经典排序算法">
+<meta property="og:url" content="https://single-man.github.io/2020/04/26/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="徐文杰的个人博客">
-<meta property="og:description" content="数据结构与算法    数据结构？        数据：描述客观事物的字、字符、图片等一些未经处理的符号。        数据结构：数据元素以及数据元素之间的关系按照某种特定的结构存储的元素集合">
+<meta property="og:description" content="十大经典排序算法（图解）一、排序算法1. 冒泡排序原理 冒泡排序(Bubble Sort)是一种简单的排序算法，它通过一次比较两个相邻的元素，看两个元素是否满足大小关系要求，如果不满足则交换两个元素。每一次冒泡都会至少产生一次数据移动，直到将最小的元素“浮”到数列顶端">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-04-15T12:42:47.610Z">
-<meta property="article:modified_time" content="2020-04-15T12:47:33.286Z">
+<meta property="og:image" content="https://single-man.github.io/img/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.gif">
+<meta property="og:image" content="https://single-man.github.io/img/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.gif">
+<meta property="og:image" content="https://single-man.github.io/img/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F.gif">
+<meta property="og:image" content="https://single-man.github.io/img/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F.gif">
+<meta property="og:image" content="https://single-man.github.io/img/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.gif">
+<meta property="article:published_time" content="2020-04-26T01:59:30.239Z">
+<meta property="article:modified_time" content="2020-05-13T04:04:37.996Z">
 <meta property="article:author" content="徐文杰">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://single-man.github.io/img/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.gif">
   
     <link rel="alternative" href="/atom.xml" title="徐文杰的个人博客" type="application/atom+xml">
   
@@ -59,7 +65,7 @@
       
 
 
-<div class="overlay" style="background: #4d4d4d;"></div>
+<div class="overlay" style="background: #4d4d4d;background: url('/img/biubiubiu.gif') no-repeat ;"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -114,7 +120,7 @@
 			
 			
 			<div>
-				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="240" height="86" src="//music.163.com/outchain/player?type=2&id=476625725&auto=1&height=66"></iframe>
+				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="240" height="86" src="//music.163.com/outchain/player?type=2&id=516076896&auto=1&height=66"></iframe>
 			</div>
 			
 				
@@ -199,14 +205,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-数据结构" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-十大经典排序算法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      数据结构
+      十大经典排序算法
     </h1>
   
 
@@ -218,8 +224,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/04/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="archive-article-date">
-        <time datetime="2020-04-15T12:42:47.610Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-15</time>
+<a href="/2020/04/26/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="archive-article-date">
+        <time datetime="2020-04-26T01:59:30.239Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-26</time>
 </a>
 
   
@@ -232,7 +238,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.5k字</span>
+      <span class="post-count">2.3k字</span>
     </span>
   </span>
 
@@ -241,7 +247,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">6分</span>
+      <span class="post-count">9分</span>
     </span>
   </span>
 </div>
@@ -252,77 +258,106 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p><strong>数据结构与算法</strong><br>    数据结构？<br>        数据：描述客观事物的字、字符、图片等一些未经处理的符号。<br>        数据结构：数据元素以及数据元素之间的关系按照某种特定的结构存储的元素集合</p>
+    <h2 id="十大经典排序算法（图解）"><a href="#十大经典排序算法（图解）" class="headerlink" title="十大经典排序算法（图解）"></a>十大经典排序算法（图解）</h2><h3 id="一、排序算法"><a href="#一、排序算法" class="headerlink" title="一、排序算法"></a>一、排序算法</h3><h4 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1. 冒泡排序"></a>1. 冒泡排序</h4><p><strong>原理</strong></p>
+<p>冒泡排序(Bubble Sort)是一种简单的排序算法，它通过一次比较两个相邻的元素，看两个元素是否满足大小关系要求，如果不满足则交换两个元素。每一次冒泡都会至少产生一次数据移动，直到将最小的元素“浮”到数列顶端</p>
 <a id="more"></a>
-<pre><code>逻辑结构？
-    数据的逻辑结构是从数据的逻辑关系上描述数据的（数据的逻辑结构与数据的存储无关）
-        1、集合
-            数据元素之间同属一个集合，元素与元素之间没有必然联系
+<p><strong>算法的过程描述：</strong></p>
+<ul>
+<li>比较相邻的元素。如果第一个比第二个大，就交换它们两个；</li>
+<li>对每一对相邻元素做同样的工作，从开始的第一对到结尾的最后一对，这样在最后的元素就是最大的元素；</li>
+<li>针对所有元素重复以上两步骤，除了最后一个；</li>
+<li>重复前三步，直到排序完成；</li>
+</ul>
+<p><strong>示意图</strong></p>
+<p><img src="/img/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.gif" alt=""></p>
+<p><strong>代码实现</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span>[] array)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> length=array.length;<span class="comment">//待排序元素的个数</span></span><br><span class="line">    <span class="keyword">if</span>(length&lt;=<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//冒泡排序</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;length;i++)&#123;<span class="comment">//控制冒泡排序的次数</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;length-i-<span class="number">1</span>;j++)&#123;<span class="comment">//相邻元素两两比较</span></span><br><span class="line">            <span class="comment">//如果前一个数据大于后一个数据则进行交换</span></span><br><span class="line">            <span class="keyword">if</span>(array[j]&gt;array[j+<span class="number">1</span>])&#123;</span><br><span class="line">               <span class="keyword">int</span> temp=array[j];</span><br><span class="line">               array[j]=arry[j+<span class="number">1</span>];</span><br><span class="line">               array[j+<span class="number">1</span>]=temp;</span><br><span class="line">           &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        2、线性结构
-            数据元素之间存在一对一的关系
 
-        3、树形结构
-            数据元素之间存在一对多的关系
 
-        4、图形结构
-            数据元素之间存在多对多的关系
-存储结构？
-    逻辑结构在计算机中的存储实现（既要存储数据，也要存储数据之间的逻辑关系）
-        1、顺序存储结构（数组）
-            一组连续的存储单元存储数据
-            优点：存储效率高、元素之间的逻辑关系没有额外的占用空间、元素可以随机存取、易查找
-            缺点：不便于数据修改、对元素的插入或删除操作可能需要移动一系列元素
-        2、链式存储结构
-            每个元素用一个内存节点存储，每个节点单独分配，节点的地址不一定连续
-            优点：便于数据修改
-            缺点：存储空间的利用率低，因为存储单元有一部分被用来存储节点之间的逻辑关系
+<h4 id="2-插入排序"><a href="#2-插入排序" class="headerlink" title="2. 插入排序"></a>2. 插入排序</h4><p><strong>原理</strong></p>
+<p>插入排序（Insertion Sort）的原理是：将数组中的数据分成两个区域，已排序区域和未排序区域。初始时已排序区域只有一个元素，就是数组的第一个元素。插入算法的核心思想是取未排序区间中的元素，在已排序的区域中找到合适的插入位置将其插入，并保证已排序区间数据一直有序。重复这个过程，直到未排序区间元素为空，算法结束。</p>
+<p><strong>算法描述过程如下</strong></p>
+<ul>
+<li>从第一个元素开始，该元素可以认为已经被排序；</li>
+<li>取出下一个元素，在已经排序的序列中从后向前扫描；</li>
+<li>如果该元素（已排序）大于新元素，将已排序的元素继续向前找；</li>
+<li>重复步骤3，直到找到已排序的元素小于或者等于新元素的位置；</li>
+<li>将新元素查到该位置后面；</li>
+<li>重复2-5</li>
+</ul>
+<p><strong>示意图</strong></p>
+<p><img src="/img/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.gif" alt="插入排序"></p>
+<p><strong>代码实现</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insertionSort</span><span class="params">(<span class="keyword">int</span>[] array)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len=array.length;</span><br><span class="line">    <span class="keyword">if</span>(len&lt;=<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;len;i++)&#123;</span><br><span class="line">        <span class="comment">//取出当前序列中未排序的元素，及当前要和已排序比较的元素</span></span><br><span class="line">        <span class="keyword">int</span> current=array[i];</span><br><span class="line">        <span class="comment">//定义在有序区间从后往前扫描的指针</span></span><br><span class="line">        <span class="keyword">int</span> preIndex=i-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(preIndex&gt;=<span class="number">0</span> &amp;&amp; array[preindex]&gt;current)&#123;</span><br><span class="line">            arr[preIndex+<span class="number">1</span>]=arr[preIndex];</span><br><span class="line">            preIndex--;</span><br><span class="line">        &#125;</span><br><span class="line">        array[preIndex+<span class="number">1</span>]=current</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        3、索引存储结构
-            存储元素的同时还建立附加的索引表
-            优点：查找效率高
-            缺点：需要建立索引表，从而增加了空间开销
 
-        4、哈希（散列）存储结构
-            根据元素的关键字通过哈希（散列）函数直接计算出一个值，并将这个值作为该元素的存储地址
-            优点：查找速度快，给出待查元素的关键字就可以立即计算出该元素的存储地址
-            缺点：哈希存储只存储元素的数据，不存储元素的逻辑关系，哈希存储只适合对元素进行快查找和插入
 
-什么是算法？
-    算法是对特定问题求解步骤的一种描述，它是指令的有限序列
+<h4 id="3-选择排序"><a href="#3-选择排序" class="headerlink" title="3. 选择排序"></a>3. 选择排序</h4><p><strong>原理</strong></p>
+<p>选择排序（Selection Sort）的原理有点类似插入排序，也分已排序区间和未排序区间。但是选择排序每次都会从未排序区间中找到最小的元素，将其放到已排序区间的末尾。</p>
+<p><strong>算法的描述过程</strong></p>
+<ul>
+<li>初始状态：无序区间为R[1..n],有序区间为空；</li>
+<li>第i趟排序 ( i = 1,2,3,…n-1) 开始时，当前有序区和无序区分别为 R[1…i-1] 和 R[i..n] 。该趟排序从当前无序区中选出关键字最小的记录R[k]，将它与无序区的第一个记录交换，使R[1..i]和R[i+1..n]分别变为记录个数增加1个的新有序区和记录个数减少1个无序区；</li>
+<li>n-1趟结束，数组有序化了。 </li>
+</ul>
+<p><strong>示意图</strong></p>
+<p><img src="/img/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F.gif" alt=""></p>
+<p><strong>代码实现</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">selectionSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> len=arr.length;</span><br><span class="line">    <span class="keyword">if</span>(len&lt;=<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> minIndex=i;</span><br><span class="line">        <span class="comment">//从未排序的序列中找到最小值	</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=i;j&lt;len;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[minIndex]&gt;arr[j])&#123;</span><br><span class="line">                minIndex=j</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> current=arr[i];</span><br><span class="line">        arr[i]=arr[minIndex];</span><br><span class="line">        arr[minIndex]=current;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    算法的特性：
-        1、有穷性：执行有穷步后结束
-        2、确定性：一个输入对应一个输出，不能有二义性
-        3、可行性：每个动作都能被机械地运行
-        4、有输入：一个算法有一个或零个输入
-        5、有输出：一个算法有一个或多个输出
 
-    算法和程序的区别：
-        【说明】程序=数据结构+算法。程序是指某种语言对算法的具体实现，即具体要怎么做。
-                而算法侧重解决问题的方法描述，即具体做什么
 
-    算法设计的目标：
-        1、正确性：要求算法能够正确执行
-        2、可使用性：要求算法能够很方便地使用
-        3、可读性：算法的逻辑必须清晰、简单、易于让人理解
-        4、健壮性：要求算法具有很好的容错性
-        5、高效率与低存储需求：执行时间短、存储效率高
+<h4 id="4-归并排序"><a href="#4-归并排序" class="headerlink" title="4. 归并排序"></a>4. 归并排序</h4><p><strong>原理</strong></p>
+<p>归并排序（Merge Sort）使用的是<strong>分治思想</strong>，而分治方法又用到了递归思想来实现。分治是一种解决问题的处理思想，递归是一种编程技巧，这两者并不冲突。而对于递归就是找到递推公式和终止条件，所以我们可以先写出归并排序的递推公式</p>
+<p><code>mergeSort(m-&gt;n) = mergeSort(mergeSort(m-&gt;k),mergeSort(k+1-&gt;n));当m=n时终止</code></p>
+<p><strong>算法描述过程</strong></p>
+<ul>
+<li><p>把长度为n的输入序列分成两个长度为n/2的子序列；</p>
+</li>
+<li><p>对这连个子序列分别采用归并排序；</p>
+</li>
+<li><p>将两个排序好的子序列合并成一个最终的排序序列</p>
+<p><strong>示意图</strong></p>
+</li>
+</ul>
+<p><img src="/img/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F.gif" alt=""></p>
+<p><strong>代码实现</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 归并排序</span></span><br><span class="line"><span class="comment">     *	将数列分解</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] MergeSort(<span class="keyword">int</span>[] array) &#123;</span><br><span class="line">        <span class="keyword">if</span> (array.length &lt; <span class="number">2</span>) <span class="keyword">return</span> array;</span><br><span class="line">        <span class="keyword">int</span> mid = array.length / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">int</span>[] left = Arrays.copyOfRange(array, <span class="number">0</span>, mid);</span><br><span class="line">        <span class="keyword">int</span>[] right = Arrays.copyOfRange(array, mid, array.length);</span><br><span class="line">        <span class="keyword">return</span> merge(MergeSort(left), MergeSort(right));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 归并排序——将两段排序好的数组结合成一个排序数组</span></span><br><span class="line"><span class="comment">     * 将分解后的数列进行合并</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] merge(<span class="keyword">int</span>[] left, <span class="keyword">int</span>[] right) &#123;</span><br><span class="line">        <span class="comment">//定义一个result数组 存放合并后的数据</span></span><br><span class="line">        <span class="keyword">int</span>[] result = <span class="keyword">new</span> <span class="keyword">int</span>[left.length + right.length];</span><br><span class="line">        <span class="comment">//index是result数组的索引 i是前半段数组索引 j是后半段数组索引</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> index = <span class="number">0</span>, i = <span class="number">0</span>, j = <span class="number">0</span>; index &lt; result.length; index++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i &gt;= left.length)<span class="comment">//此时说明左半段数组已完全放入result数组中</span></span><br><span class="line">                result[index] = right[j++];<span class="comment">//把右半段数组直接放入rusult中，无需比较</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (j &gt;= right.length)<span class="comment">//此时说明右半段数组先放入result中</span></span><br><span class="line">                result[index] = left[i++];</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (left[i] &gt; right[j])<span class="comment">//左半段第一个数大于右半段第一个数</span></span><br><span class="line">                result[index] = right[j++];<span class="comment">//将右半段第一个数放入result数组中</span></span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                result[index] = left[i++];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-算法的分析
-    算法分析就是分析算法占用计算机资源的多少。主要是分析CPU时间和内存空间。
-    时间性能分析：分析算法占用CPU时间的多少
-    空间性能分析：分析算法占用内存空间的多少
 
-    1、算法的时间复杂度</code></pre><p>一、数组</p>
-<pre><code>1、什么是数组？
-    数组是一种基本的数据结构，用于按顺序存储元素的集合。数组中的每个元素都可通过数组下标来识别。
 
-2、静态数组
-    静态数组初始化后，存储的大小就确定了，所以有可能出现存储空间不足或存储空间浪费的现象
-        常用的方法：
-            1、获取长度:a.length;
-            2、自动排序：Arrays.sort();</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">				<span class="comment">// 1. Initialize</span></span><br><span class="line">				<span class="keyword">int</span>[] a0 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</span><br><span class="line">				<span class="keyword">int</span>[] a1 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 2. Get Length</span></span><br><span class="line">				System.out.println(<span class="string">"The size of a1 is: "</span> + a1.length);</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 3. Access Element</span></span><br><span class="line">				System.out.println(<span class="string">"The first element is: "</span> + a1[<span class="number">0</span>]);</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 4. Iterate all Elements</span></span><br><span class="line">				System.out.print(<span class="string">"[Version 1] The contents of a1 are:"</span>);</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a1.length; ++i) &#123;</span><br><span class="line">					System.out.print(<span class="string">" "</span> + a1[i]);</span><br><span class="line">				&#125;</span><br><span class="line">				</span><br><span class="line">				System.out.println();</span><br><span class="line">				System.out.print(<span class="string">"[Version 2] The contents of a1 are:"</span>);</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> item: a1) &#123;</span><br><span class="line">					System.out.print(<span class="string">" "</span> + item);</span><br><span class="line">				&#125;</span><br><span class="line">				System.out.println();</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 5. Modify Element</span></span><br><span class="line">				a1[<span class="number">0</span>] = <span class="number">4</span>;</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 6. Sort</span></span><br><span class="line">				Arrays.sort(a1);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	<span class="number">3</span>、动态数组</span><br><span class="line">		动态数组是一个随机存取的列表数据结构，但大小是可变的（ArrayList）</span><br><span class="line">		常用的方法：</span><br><span class="line">			<span class="number">1</span>、获取元素：get(index);</span><br><span class="line">			<span class="number">2</span>、获取长度：size();</span><br><span class="line">			<span class="number">3</span>、元素赋值：set(index,element);</span><br><span class="line">			<span class="number">4</span>、自动排序：Collections.sort();</span><br><span class="line">			<span class="number">5</span>、删除元素：remove(index);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">				<span class="comment">// 1. initialize</span></span><br><span class="line">				List&lt;Integer&gt; v0 = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">				List&lt;Integer&gt; v1;                           <span class="comment">// v1 == null</span></span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 2. cast an array to a vector</span></span><br><span class="line">				Integer[] a = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;;</span><br><span class="line">				v1 = <span class="keyword">new</span> ArrayList&lt;&gt;(Arrays.asList(a));</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 3. make a copy</span></span><br><span class="line">				List&lt;Integer&gt; v2 = v1;                      <span class="comment">// another reference to v1</span></span><br><span class="line">				List&lt;Integer&gt; v3 = <span class="keyword">new</span> ArrayList&lt;&gt;(v1);     <span class="comment">// make an actual copy of v1</span></span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 3. get length</span></span><br><span class="line">				System.out.println(<span class="string">"The size of v1 is: "</span> + v1.size());;</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 4. access element</span></span><br><span class="line">				System.out.println(<span class="string">"The first element in v1 is: "</span> + v1.get(<span class="number">0</span>));</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 5. iterate the vector</span></span><br><span class="line">				System.out.print(<span class="string">"[Version 1] The contents of v1 are:"</span>);</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; v1.size(); ++i) &#123;</span><br><span class="line">					System.out.print(<span class="string">" "</span> + v1.get(i));</span><br><span class="line">				&#125;</span><br><span class="line">				System.out.println();</span><br><span class="line">				System.out.print(<span class="string">"[Version 2] The contents of v1 are:"</span>);</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> item : v1) &#123;</span><br><span class="line">					System.out.print(<span class="string">" "</span> + item);</span><br><span class="line">				&#125;</span><br><span class="line">				System.out.println();</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 6. modify element</span></span><br><span class="line">				v2.set(<span class="number">0</span>, <span class="number">5</span>);       <span class="comment">// modify v2 will actually modify v1</span></span><br><span class="line">				System.out.println(<span class="string">"The first element in v1 is: "</span> + v1.get(<span class="number">0</span>));</span><br><span class="line">				v3.set(<span class="number">0</span>, -<span class="number">1</span>);</span><br><span class="line">				System.out.println(<span class="string">"The first element in v1 is: "</span> + v1.get(<span class="number">0</span>));</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 7. sort</span></span><br><span class="line">				Collections.sort(v1);</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 8. add new element at the end of the vector</span></span><br><span class="line">				v1.add(-<span class="number">1</span>);		<span class="comment">//没有标明索引，自动添加到最后一元素</span></span><br><span class="line">				v1.add(<span class="number">1</span>, <span class="number">6</span>);</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 9. delete the last element</span></span><br><span class="line">				v1.remove(v1.size() - <span class="number">1</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="5-快速排序"><a href="#5-快速排序" class="headerlink" title="5. 快速排序"></a>5. 快速排序</h4><p><strong>原理</strong></p>
+<p>快速排序（Quick Sort）算法，简称快排，利用的是分治思想；快排的思路：如果要对m-&gt;n之间的数列进行排序，我们选择m-&gt;n之间的任意一个元素数据作为分区点(Pivot)，然后我们遍历m-&gt;n之间的所以元素，将小于pivot的元素放到左边，大于pivot的元素放到右边，pivot放到之间，这样整个数列就被分成三个部分，m-k-1之间的元素是小于pivot的，之间是pivot，k+1-&gt;m之间的元素是大于pivot的。然后再根据分治递归的思想处理两边区间的元素数列，直到区间缩减为1，就说明整个序列已经有序了</p>
+<p><strong>算法描述过程</strong></p>
+<ul>
+<li>从数列中挑出一个元素，称为“基准”（pivot）；</li>
+<li>重新排序数列，所有比基准小的元素摆放在基准前面，所有元素比基准大的摆放在基准后面（相同的数可以到任一边）。在这分区退出之后，该基准就处于数列的中间位置；</li>
+<li>递归地把小于基准值的元素子序列和大于基准值的元素子序列排序</li>
+</ul>
+<p><strong>示意图</strong></p>
+<p><img src="/img/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.gif" alt=""></p>
+<p><strong>代码实现</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 快速排序方法</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] QuickSort(<span class="keyword">int</span>[] array, <span class="keyword">int</span> start, <span class="keyword">int</span> end) &#123;</span><br><span class="line">        <span class="keyword">if</span> (array.length &lt; <span class="number">1</span> || start &lt; <span class="number">0</span> || end &gt;= array.length || start &gt; end) </span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">int</span> smallIndex = partition(array, start, end);</span><br><span class="line">        <span class="keyword">if</span> (smallIndex &gt; start)</span><br><span class="line">            QuickSort(array, start, smallIndex - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span> (smallIndex &lt; end)</span><br><span class="line">            QuickSort(array, smallIndex + <span class="number">1</span>, end);</span><br><span class="line">        <span class="keyword">return</span> array;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 快速排序算法——partition</span></span><br><span class="line"><span class="comment">     * 找基准点</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">partition</span><span class="params">(<span class="keyword">int</span>[] array, <span class="keyword">int</span> start, <span class="keyword">int</span> end)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//将最后一个元素设为基准点</span></span><br><span class="line">        <span class="keyword">int</span> pivot = array[end];</span><br><span class="line">        <span class="comment">//int pivot = (int) (start + Math.random() * (end - start + 1));</span></span><br><span class="line">        <span class="keyword">int</span> smallIndex = start - <span class="number">1</span>;</span><br><span class="line">        swap(array, pivot, end);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = start; i &lt;= end; i++)</span><br><span class="line">            <span class="keyword">if</span> (array[i] &lt;= array[end]) &#123;</span><br><span class="line">                smallIndex++;</span><br><span class="line">                <span class="keyword">if</span> (i &gt; smallIndex)</span><br><span class="line">                    swap(array, i, smallIndex);</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">return</span> smallIndex;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 交换数组内两个元素</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] array, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = array[i];</span><br><span class="line">        array[i] = array[j];</span><br><span class="line">        array[j] = temp;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="6-桶排序"><a href="#6-桶排序" class="headerlink" title="6. 桶排序"></a>6. 桶排序</h4><p><strong>原理</strong></p>
+<p>桶排序（Bucked Sort）是将待排序集合中处于同一值域的元素存入同一桶中，也就是根据元素值特性将集合拆分为多个区域，则拆分后形成的多个桶，从值域上开是处于有序状态的。对每个桶中元素进行排序，则所有桶中元素构成的集合是已排序的。</p>
+<p><strong>算法描述过程</strong></p>
+<ul>
+<li><p>人为设置一个BucketSize，作为每个桶所能放置多少个不同数值（例如当BucketSize==5时，该桶可以存放｛1,2,3,4,5｝这几种数字，但是容量不限，即可以存放100个3）；</p>
+</li>
+<li><p>遍历输入数据，并且把数据一个一个放到对应的桶里去；</p>
+</li>
+<li><p>对每个不是空的桶进行排序，可以使用其它排序方法，也可以递归使用桶排序；</p>
+</li>
+<li><p>从不是空的桶里把排好序的数据拼接起来。 </p>
+<p><strong>注意，如果递归使用桶排序为各个桶排序，则当桶数量为1时要手动减小BucketSize增加下一循环桶的数量，否则会陷入死循环，导致内存溢出。</strong></p>
+</li>
+</ul>
 
     
 
@@ -369,7 +404,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://single-man.github.io/2020/04/15/数据结构/" title="数据结构" target="_blank">https://single-man.github.io/2020/04/15/数据结构/</a>
+          <a href="https://single-man.github.io/2020/04/26/十大经典排序算法/" title="十大经典排序算法" target="_blank">https://single-man.github.io/2020/04/26/十大经典排序算法/</a>
         </li>
         
         <li>
@@ -436,7 +471,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://single-man.github.io/2020/04/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://single-man.github.io/2020/04/26/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -872,7 +907,7 @@
       
     },
     mobile: {
-       show: false, 
+      
        scale: 0.6 
     },
     react: {
