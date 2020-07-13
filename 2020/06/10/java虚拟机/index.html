@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="徐文杰">
+  <meta name="keywords" content="">
+  <title>java虚拟机 | IT小猪猪</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+<link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_fmb4a04yx8h.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+
+  
+ 
+
+
+
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>不甘平凡的猪</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">
+              <i class="iconfont icon-home-fill"></i>
+              主页</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">
+              <i class="iconfont icon-archive-fill"></i>
+              时间轴</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/messageboard/">
+              <i class="iconfont icon-pen"></i>
+              留言</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">
+              <i class="iconfont icon-tags-fill"></i>
+              标签</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/links/">
+              <i class="iconfont icon-link-fill"></i>
+              友链</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">
+              <i class="iconfont icon-user-fill"></i>
+              关于</a>
+          </li>
+        
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('/img/idea%E8%83%8C%E6%99%AF%E5%9B%BE02.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+                <div class="mt-3 post-meta">
+                  <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+                  <time datetime="2020-06-10 00:00">
+                    June 10, 2020 am
+                  </time>
+                </div>
+              
+
+              <div class="mt-1">
+                
+                  
+                  <span class="post-meta mr-2">
+                    <i class="iconfont icon-chart"></i>
+                    3.5k 字
+                  </span>
+                
+
+                
+                  
+                  <span class="post-meta mr-2">
+                      <i class="iconfont icon-clock-fill"></i>
+                    
+                    
+                    37
+                     分钟
+                  </span>
+                
+
+                
+              </div>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <article class="markdown-body">
+              <h1 id="java虚拟机"><a href="#java虚拟机" class="headerlink" title="java虚拟机"></a>java虚拟机</h1><h2 id="一、jdk、jre、jvm概念"><a href="#一、jdk、jre、jvm概念" class="headerlink" title="一、jdk、jre、jvm概念"></a>一、jdk、jre、jvm概念</h2><p><strong>jdk&gt;jre&gt;jvm</strong></p>
+<h3 id="1、jvm的内存结构"><a href="#1、jvm的内存结构" class="headerlink" title="1、jvm的内存结构"></a>1、jvm的内存结构</h3><p><img src="/img/%E6%96%87%E6%A1%A3%E6%88%AA%E5%9B%BE/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%AD%90%E7%B3%BB%E7%BB%9F.png" srcset="/img/loading.gif" alt=""></p>
+<h2 id="二、类加载子系统"><a href="#二、类加载子系统" class="headerlink" title="二、类加载子系统"></a>二、类加载子系统</h2><p><img src="/img/%E6%96%87%E6%A1%A3%E6%88%AA%E5%9B%BE/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8.png" srcset="/img/loading.gif" alt=""></p>
+<h3 id="1、类加载器子系统的作用"><a href="#1、类加载器子系统的作用" class="headerlink" title="1、类加载器子系统的作用"></a>1、类加载器子系统的作用</h3><ul>
+<li>类加载器子系统负责从文件系统或网络中加载class文件，class文件在文件开头有特定的文件标识。</li>
+<li>ClassLoader只负责class文件的加载，至于它是否可以运行，则由Execution Engine决定</li>
+<li>加载的类的信息存放在一快称为方法区的内存空间。除了类的信息外，方法区还会存放运行时常量池消息，可能还包括字符串字面量和数字常量</li>
+</ul>
+<h3 id="2、类加载器的三个过程"><a href="#2、类加载器的三个过程" class="headerlink" title="2、类加载器的三个过程"></a>2、类加载器的三个过程</h3><p><img src="/img/%E6%96%87%E6%A1%A3%E6%88%AA%E5%9B%BE/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B.png" srcset="/img/loading.gif" alt=""></p>
+<h4 id="1、加载阶段"><a href="#1、加载阶段" class="headerlink" title="1、加载阶段"></a>1、<strong>加载阶段</strong></h4><ol>
+<li>通过一个类的全限定名获取定义此类的二进制字节流</li>
+<li>将这个字节流所代表的静态存储结构转化为方法区的运行时数据结构</li>
+<li><strong>在内存中生成一个代表这个类的java.lang.Class对象</strong>，作为方法区这个类的各种数据访问入口</li>
+</ol>
+<h4 id="2、链接阶段"><a href="#2、链接阶段" class="headerlink" title="2、链接阶段"></a>2、链接阶段</h4><ul>
+<li><strong>验证(Verify)</strong><ol>
+<li>目的在于确保Class文件的字节流中包含信息符合当前虚拟机要求，保证被加载类的正确性，不会危害虚拟机的自身安全</li>
+<li>主要包括四种验证：文件格式验证、元数据验证、字节码验证、符号引用验证。</li>
+</ol>
+</li>
+<li><strong>准备(Prepare)</strong><ol>
+<li>为类变量分配内存并且设置该类变量的默认初始值，即零值。</li>
+<li>这里不包含final修饰的static，因为final在编译的时候就被分配了，准备阶段会显示初始化。</li>
+<li>这里不会为实例变量分配初始化，类变量会分配在方法区中，而且实例变量是会随着对象一起分配到java堆中。</li>
+</ol>
+</li>
+<li><strong>解析(Resolve)</strong><ol>
+<li>将常量池中的符号引用转换为直接引用的过程。</li>
+<li>事实上，解析操作往往会伴随着JVM在执行完初始化之后执行</li>
+<li>符号引用就是一组符号来描述所引用的目标。符号引用的字面量形式明确定义在《java虚拟机规范》的class文件格式中。直接引用就是直接指向目标的指针、相对偏移量或一个间接定位到目标的句柄</li>
+<li>解析动作主要针对类或接口、字段、类方法、接口方法、方法类型等。</li>
+</ol>
+</li>
+</ul>
+<h4 id="3、初始化阶段"><a href="#3、初始化阶段" class="headerlink" title="3、初始化阶段"></a>3、初始化阶段</h4><ol>
+<li>初始化阶段就是执行类构造器方法<clinit>()过程</li>
+<li>此方法不需要定义，是javac编译器自动收集类中所有类变量的赋值动作和静态代码块中的语句合并而来</li>
+<li>构造器方法中指令按语句在源文件中出现的顺序执行。</li>
+<li><clinit>()不同于类的构造器。（构造器是虚拟机视角下的<init>()）.</li>
+<li>若该类具有父类，jvm会保证子类的<clinit>()执行前，父类的<clinit>()已经执行完毕。</li>
+<li>虚拟机必须保证一个类的<clinit>()方法在多线程下被同步加锁。</li>
+</ol>
+<h3 id="3、双亲委派机制"><a href="#3、双亲委派机制" class="headerlink" title="3、双亲委派机制"></a>3、双亲委派机制</h3><p><img src="/img/%E6%96%87%E6%A1%A3%E6%88%AA%E5%9B%BE/%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE%E6%9C%BA%E5%88%B6.png" srcset="/img/loading.gif" alt=""></p>
+<h4 id="1、工作原理："><a href="#1、工作原理：" class="headerlink" title="1、工作原理："></a>1、工作原理：</h4><ol>
+<li>如果一个类加载器收到类加载器请求，它并不会自己去加载，而是把这个请求委托个父类加载器去执行；</li>
+<li>如果父类加载器还存在父类加载器，则进一步向上委托，依次递归，请求最终将到达顶层的启动类加载器；</li>
+<li>如果父类加载器可以完成类加载任务，就成功返回，倘若父类加载器无法完成此加载任务，子加载器才会尝试自己去加载，这就是双亲委派模式。</li>
+</ol>
+<h4 id="2、优势"><a href="#2、优势" class="headerlink" title="2、优势"></a>2、优势</h4><ol>
+<li>避免类的重复加载</li>
+<li>保护程序安全，防止核心API被恶意篡改</li>
+</ol>
+<h3 id="4、沙箱安全机制"><a href="#4、沙箱安全机制" class="headerlink" title="4、沙箱安全机制"></a>4、沙箱安全机制</h3><p>​    自定义String类，但是在加载自定义String类的时候会率先使用引导类加载器加载，而引导类加载器在加载的过程中会先加载jdk自带的文件(rt.jar包中的java\lang\String.class)，报错消息说没有mian方法，就是因为加载的是rt.jar包中的String类。这样可以保证对java核心源代码的保护，这就是<strong>沙箱安全机制</strong></p>
+<h2 id="三、运行时数据区"><a href="#三、运行时数据区" class="headerlink" title="三、运行时数据区"></a>三、运行时数据区</h2><p><img src="/img/%E6%96%87%E6%A1%A3%E6%88%AA%E5%9B%BE/%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA.png" srcset="/img/loading.gif" alt=""></p>
+<blockquote>
+<p><strong>内存</strong>：内存是一个非常重要的系统资源，是硬盘和CPU的主键仓库及桥梁，承载着操作系统和应用程序的实时运行。JVM内存布局规定了java在运行过程中内存申请、分配、管理等策略，保证jvm高效稳定运行。不同的jvm对于内存的划分方式和管理机制存在这部分差异。</p>
+</blockquote>
+<h3 id="一、程序计数器"><a href="#一、程序计数器" class="headerlink" title="一、程序计数器"></a>一、程序计数器</h3><h5 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1. 介绍"></a>1. 介绍</h5><ul>
+<li>它是程序控制流的指示器，分支、循环、跳转、异常处理、线程恢复等基础功能都需要依赖计数器来完成。</li>
+<li>字节码解释器工作时就是通过改变这个计数器的值来选取下一条需要执行的字节码指令。</li>
+<li>它是唯一一个在java虚拟机规范中没有规定任何OutOfMemoryError情况的区域。</li>
+</ul>
+<h5 id="2-作用"><a href="#2-作用" class="headerlink" title="2. 作用"></a>2. 作用</h5><p>PC寄存器用来存储指向下一条指令的地址，即将要执行的指令代码。由执行引擎读取下一条指令。</p>
+<h5 id="3-问题"><a href="#3-问题" class="headerlink" title="3. 问题"></a>3. 问题</h5><p><strong>1. 使用pc寄存器存储字节码指令地址有什么好处？</strong></p>
+<p><strong>为什么使用PC寄存器记录当前线程的执行地址呢？</strong></p>
+<p>答：因为CPU需要不断切换各个线程，这时候切换回来以后，就得知道接下来从哪开始执行。JVM字节码解释器就需要改变PC寄存器的值来明确下一条应该执行什么样的字节码指令。</p>
+<p><strong>2. PC寄存器为什么会被设定为线程私有的？</strong></p>
+<p>答：我们知道所谓的多线程在一个特定的时间段内只会执行其中某一个线程的方法，CPU会不停地做任务切换，这样必然导致中断或恢复，如何保证分毫无差呢？<strong>为了更加准确地记录各个线程正在执行的当前字节码指令地址，最好的办法自然是为没一个线程都分配一个PC寄存器</strong>，这样一来各个线程之间便可以进行独立计算，从而不会出现相互干扰的情况。</p>
+<h3 id="二、虚拟机栈"><a href="#二、虚拟机栈" class="headerlink" title="二、虚拟机栈"></a>二、虚拟机栈</h3><h4 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h4><p>java虚拟机栈（Java Virtual Mechine Stack），早期叫java栈。每个线程在创建时都会创建一个虚拟机栈，其内部保存一个个的栈帧（Stack Frame），对应着一次次的java方法调用。是线程私有的。生命周期和线程一致。</p>
+<h4 id="2-作用-1"><a href="#2-作用-1" class="headerlink" title="2. 作用"></a>2. 作用</h4><p>主管java程序的运行，它保证方法的局部变量、部分结果，并参与方法调用与返回。</p>
+<h4 id="3-设置栈内存大小"><a href="#3-设置栈内存大小" class="headerlink" title="3. 设置栈内存大小"></a>3. 设置栈内存大小</h4><p>-Xss size</p>
+<p>size可以是k、m、b 为单位</p>
+<h4 id="4-栈帧"><a href="#4-栈帧" class="headerlink" title="4. 栈帧"></a>4. 栈帧</h4><p><img src="/img/%E6%96%87%E6%A1%A3%E6%88%AA%E5%9B%BE/%E6%A0%88%E5%B8%A7%E5%86%85%E9%83%A8%E7%BB%93%E6%9E%84.png" srcset="/img/loading.gif" alt=""></p>
+<p><strong>每个栈帧中存储着：</strong></p>
+<ul>
+<li>局部变量表</li>
+<li>操作数栈（或表达式栈）</li>
+<li>动态链接（或指向运行时常量池的引用）</li>
+<li>方法返回地址（或方法正常退出、异常退出的定义）</li>
+<li>一些附加信息</li>
+</ul>
+<h5 id="1-局部变量表："><a href="#1-局部变量表：" class="headerlink" title="1. 局部变量表："></a><strong>1. 局部变量表：</strong></h5><ul>
+<li>局部变量表也被称之为局部变量数组或本地变量表</li>
+<li>定义一个数字数组，主要用于存储方法参数和定义在方法体内的局部变量，这些数据类型包括各类基本数据类型、对象引用类型</li>
+<li>由于局部变量表是建立在线程的栈上，是线程的私有数据，因此不存在数据安全问题</li>
+<li>局部变量表所需的容量大小是在编译期确定下来的，并保存在方法的Code属性的maximum local variabless数据项中。在方法运行期间是不会改变局部变量表的大小的。</li>
+</ul>
+<h5 id="2-操作数栈"><a href="#2-操作数栈" class="headerlink" title="2. 操作数栈"></a>2. 操作数栈</h5><ul>
+<li>没一个独立的栈帧中除了包含局部变量表外，还包含一个后进先出的操作数栈，也称之为表达式栈</li>
+<li>操作数栈在方法执行过程中，根据字节码指令，往栈中写入数据或读取数据，即入栈、出栈</li>
+<li>操作数栈，<strong>主要用于保存计算过程的中间结果，同时作为计算过程中变量临时的存储空间。</strong></li>
+</ul>
+<h5 id="3-动态链接"><a href="#3-动态链接" class="headerlink" title="3. 动态链接"></a>3. 动态链接</h5><ul>
+<li>每一个栈帧内部都包含一个指向运行时常量池中该栈帧所属方法的引用。包括这个引用的目的就是为了支持当前方法的代码能够实现动态链接。</li>
+<li>在java源文件被编译到字节码文件中时，所以的变量方法和引用都作为符号引用保存在Class文件的常量池中。比如：描述了一个方法调用了另外的其它方法时，就是通过常量池中指向方法的符号引用来表示的，<strong>那么动态链接的作用就是为了将这些符号引用转换为调用方法的直接引用。</strong></li>
+</ul>
+<p><strong>方法重写的本质：</strong></p>
+<ol>
+<li>找到操作数栈顶的第一个元素所执行的对象实例类型，记作C；</li>
+<li>如果在类型C中找到与常量中的描述符合简单名称都想符的方法，则进行访问权限校验，如果通过则返回这个方法的直接引用，查找过程结束；如果不通过则返回 java.lang.IllegalAccesssErroe 异常；</li>
+<li>否则按照继承关系从下往上依次对C的各个父类进行第2步的搜索和验证过程</li>
+<li>如果始终没有找到合适的方法，则抛出java.lang.AbstractMethodError 异常</li>
+</ol>
+<h5 id="4-方法返回地址"><a href="#4-方法返回地址" class="headerlink" title="4. 方法返回地址"></a>4. 方法返回地址</h5><ul>
+<li>存放调用该方法的pc寄存器的值</li>
+</ul>
+<h4 id="5-本地方法栈"><a href="#5-本地方法栈" class="headerlink" title="5. 本地方法栈"></a>5. 本地方法栈</h4><ul>
+<li>java虚拟机栈用于管理java方法的调用，而本地方法栈用于管理本地方法的调用</li>
+<li>本地方法栈是线程私有的</li>
+<li>本地方法是使用C语言实现的</li>
+</ul>
+<h4 id="6-本地方法"><a href="#6-本地方法" class="headerlink" title="6. 本地方法"></a>6. 本地方法</h4><h5 id="1-什么是本地方法？"><a href="#1-什么是本地方法？" class="headerlink" title="1. 什么是本地方法？"></a>1. 什么是本地方法？</h5><p>简单地讲，<strong>一个本地方法（Native Method）就是一个Java调用非java代码的接口。</strong></p>
+<p>本地方法：该方法的实现由非java代码语言实现，比如C。</p>
+<h5 id="2-为什么使用本地方法呢？"><a href="#2-为什么使用本地方法呢？" class="headerlink" title="2. 为什么使用本地方法呢？"></a>2. 为什么使用本地方法呢？</h5><p><strong>与java环境交互：</strong></p>
+<p><strong>有时java应用需要与java外部环境交互，这是本地方法存在的主要原因。</strong>java需要与一些底层的系统，如操作系统或某些硬件交换信息时。本地方法正是这样一种交流机制：它为我们提供了一个非常简洁的接口，而且我们无需去了解java应用之外的繁琐细节。</p>
+<h3 id="三、堆"><a href="#三、堆" class="headerlink" title="三、堆"></a>三、堆</h3><p><img src="/img/%E6%96%87%E6%A1%A3%E6%88%AA%E5%9B%BE/%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA.png" srcset="/img/loading.gif" alt=""></p>
+<h4 id="1、堆的核心概述"><a href="#1、堆的核心概述" class="headerlink" title="1、堆的核心概述"></a>1、堆的核心概述</h4><ul>
+<li>一个JVM实例只存在一个堆内存，堆也是java内存管理的核心区域；</li>
+<li>java堆区在jvm启动时即被创建，其空间大小也就确定了。是jvm管理的最大一块内存空间。堆内存的大小是可以调节的；</li>
+<li>《java虚拟机规范》规定，堆可以处于物理上不连续的内存空间中，但在逻辑上它应该被视为连续的；</li>
+<li>所以线程共享java堆，在这里还可以划分线程私有缓冲区；</li>
+<li>数组和对象永远不会存储在栈上，因为栈帧中保留引用，这个引用指向对象或者数组在堆中的位置；</li>
+<li>在方法结束后，对中的对象不会马上被移除，仅仅在垃圾收集的时候才会被移除；</li>
+</ul>
+<p><img src="/img/%E6%96%87%E6%A1%A3%E6%88%AA%E5%9B%BE/%E5%A0%86%E5%86%85%E5%AD%98%E7%BB%86%E5%88%86.png" srcset="/img/loading.gif" alt=""></p>
+<h4 id="2、堆内存大小的设置"><a href="#2、堆内存大小的设置" class="headerlink" title="2、堆内存大小的设置"></a>2、堆内存大小的设置</h4><ul>
+<li><p><strong>“–Xms”用于表示堆区的起始内存，等价于–XX:InitialHeapSize;</strong></p>
+</li>
+<li><p><strong>“–Xmx”用于表示堆区的最大内存，等价于–XX:MaxHeapSize;</strong></p>
+</li>
+<li><p>一旦堆区中的内存大小超过“–Xmx”所指定的最大内存时，将会抛出OutOfMamoryError异常；</p>
+</li>
+<li><p>通常会将“–Xms”和“–Xmx”两个参数配置相同的值，其目的是为了能够在java垃圾回收机制清理完堆区后不需要重新分隔计算堆区大小，从而提高性能；</p>
+</li>
+<li><p>默认情况下，初始内存大小：物理电脑内存大小 / 64</p>
+<p>​                       最大内存大小：物理电脑内存大小 / 4</p>
+</li>
+</ul>
+<h4 id="3、年轻代和老年代"><a href="#3、年轻代和老年代" class="headerlink" title="3、年轻代和老年代"></a>3、年轻代和老年代</h4><ul>
+<li>java堆区又可以细分为年轻代（YoungGen）和老年代（OldGen）</li>
+<li>其中年轻代又可以划分为Eden空间、Survivor 0 和 Survivor 1 空间（有时也叫from区、to区）</li>
+</ul>
+<p><img src="/img/%E6%96%87%E6%A1%A3%E6%88%AA%E5%9B%BE/%E5%B9%B4%E8%BD%BB%E4%BB%A3%E4%B8%8E%E8%80%81%E5%B9%B4%E4%BB%A3.png" srcset="/img/loading.gif" alt=""></p>
+<p><img src="/img/%E6%96%87%E6%A1%A3%E6%88%AA%E5%9B%BE/%E5%AF%B9%E8%B1%A1%E7%AE%A1%E7%90%86.png" srcset="/img/loading.gif" alt=""></p>
+<p><strong>总结：</strong></p>
+<ul>
+<li>针对幸存者s0,s1区的总结：复制后有交换，谁空谁是to;</li>
+<li>关于垃圾回收：频繁在新生区收集，很少在养老区收集，几乎不在永久区/元空间收集；</li>
+</ul>
+<p><strong>年轻代GC（Minor GC）触发机制：</strong></p>
+<ul>
+<li>当年轻代空间不足时，就会触发Minor GC，这里的年轻代满指的是Eden代满，Survivor满不会触发GC；</li>
+<li>因为java对象大多都具备朝生夕灭的特点，所以Minor GC 执行很频繁；</li>
+<li>Minor GC会引发STW，暂停其它用户线程，等垃圾回收结束，用户线程才恢复运行；</li>
+</ul>
+<p><strong>老年代GC（Major GC/Full GC）触发机制：</strong></p>
+<ul>
+<li>出现了Major GC，经常会伴随着至少一次的Major GC，也就是在老年代空间不足的时，会先触发Minor GC。如果空间还是不足，则触发Major GC；</li>
+<li>Major GC的执行速度一般会比Minor GC慢10倍以上，STW时间更长。</li>
+<li>如果Major GC后内存还是不足，就报OOM；</li>
+</ul>
+<h4 id="4、为对象分配内存：TLAB"><a href="#4、为对象分配内存：TLAB" class="headerlink" title="4、为对象分配内存：TLAB"></a>4、为对象分配内存：TLAB</h4><p><strong>为什么会有TLAB（Thread Local Allocation Buffer）？</strong></p>
+<ul>
+<li>堆区是线程共享数据区域，任何线程都可以访问到堆区共享的数据；</li>
+<li>由于对象实例的创建在JVM中非常频繁，因此在并发环境下从堆区中划分为内存空间是线程不安全的；</li>
+<li>为了避免多个线程操作同一个地址，需要使用加锁等机制，进而影响分配速度；</li>
+</ul>
+
+            </article>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/jvm/">jvm</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/07/12/%E3%80%8A%E4%BA%BA%E6%80%A7%E7%9A%84%E5%BC%B1%E7%82%B9%E3%80%8B/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">人性的弱点</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/2020/05/18/%E5%9C%A8Ubuntu%E4%B8%AD%E5%AE%89%E8%A3%85Docker/">
+                        <span class="hidden-mobile">在Ubuntu中安装Docker</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <div class="comments" id="comments">
+                
+                
+
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-md">
+    <div class="container custom post-content mx-auto">
+      <img src="https://octodex.github.com/images/jetpacktocat.png" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
+    </div>
+  </div>
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+  <!-- 备案信息 -->
+  <div>
+    <a href="http://beian.miit.gov.cn/" target="_blank" class="beian-icp"
+       rel="nofollow noopener">京ICP证123456号</a>
+    
+      <a
+        href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=12345678"
+        rel="nofollow noopener"
+        class="beian-police"
+        target="_blank"
+      >
+        <span class="beian-police-sep">&nbsp;|&nbsp;</span>
+        
+          <img src="/img/police_beian.png" srcset="/img/loading.gif" alt="police-icon" />
+        
+        <span>京公网安备12345678号</span>
+      </a>
+     
+  </div>
+
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/main.js" ></script>
+
+
+  <script  src="/js/lazyload.js" ></script>
+
+
+
+  
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '.post-content',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+<!-- Plugins -->
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "java虚拟机&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
