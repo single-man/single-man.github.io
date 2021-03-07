@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="徐文杰">
   <meta name="keywords" content="">
-  <title>连接池的使用 | IT小猪猪</title>
+  <title>Datediff()函数的用法（SQL函数） | IT小猪猪</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -142,8 +142,8 @@
               
                 <div class="mt-3 post-meta">
                   <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-                  <time datetime="2020-04-14 23:35">
-                    April 14, 2020 pm
+                  <time datetime="2021-03-07 00:00">
+                    March 7, 2021 am
                   </time>
                 </div>
               
@@ -153,7 +153,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    557 字
+                    68 字
                   </span>
                 
 
@@ -163,7 +163,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    6
+                    1
                      分钟
                   </span>
                 
@@ -192,57 +192,43 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <h6 id="c3p0使用步骤"><a href="#c3p0使用步骤" class="headerlink" title="c3p0使用步骤"></a>c3p0使用步骤</h6><pre><code>1. 导入jar包（两个）：c3p0-0.9.1.2.jar  commons-dbutils-1.4.jar  mysql-connector-java-5.0.8-bin.jar
-2. 定义配置文件：
-    * 名称：c3p0.properties 或  c3p0-config.xml
-    * 路径：直接将文件放置src目录下即可</code></pre><a id="more"></a>
-<pre><code>3. 创建核心对象，数据库连接池对象 ComboPooledDataSource
-4. 获取连接：getConnection
-5. 关键代码代码：
-    1.  //创建数据库连接池对象
-        DataSource ds=new ComboPooledDataSource();
-        //获取连接对象
-        Connection conn = ds.getConnection();
-        //打印
-        System.out.println(conn);</code></pre><h6 id="Druid：数据库连接池实现技术，由阿里巴巴提供"><a href="#Druid：数据库连接池实现技术，由阿里巴巴提供" class="headerlink" title="Druid：数据库连接池实现技术，由阿里巴巴提供"></a>Druid：数据库连接池实现技术，由阿里巴巴提供</h6><pre><code>      1.导入jar包：druid-1.0.9.jar
-      2.定义配置文件：
-          *是properties形式的
-          *可以叫任意名称，可以放置在任意目录下
-      3.获取配置文件Properties
-      4.获取数据库连接池：通过工厂类来获取 DruidDataSourceFactory
-      5.获取连接对象：getConnection
-      6.关键代码：
-          //加载配置文件
-          Properties pro=new Properties();
-          InputStream is = DruidDemo01.class.getClassLoader().getResourceAsStream(&quot;druid.properties&quot;);
-          pro.load(is);
-          //获取连接池对象
-          DataSource ds = DruidDataSourceFactory.createDataSource(pro);
-          //获取连接
-          Connection conn = ds.getConnection();
+              <h1 id="Datediff-函数的用法（SQL函数）"><a href="#Datediff-函数的用法（SQL函数）" class="headerlink" title="Datediff()函数的用法（SQL函数）"></a>Datediff()函数的用法（SQL函数）</h1><h3 id="1、语法"><a href="#1、语法" class="headerlink" title="1、语法"></a>1、语法</h3><p><strong>DATEDIFF(datepart,startdate,enddate)</strong></p>
+<table>
+<thead>
+<tr>
+<th>datepart</th>
+<th>缩写</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>年</td>
+<td>yy/yyyy</td>
+</tr>
+<tr>
+<td>月</td>
+<td>mm/m</td>
+</tr>
+<tr>
+<td>日</td>
+<td>dd/d</td>
+</tr>
+</tbody></table>
+<h3 id="2、实例"><a href="#2、实例" class="headerlink" title="2、实例"></a>2、实例</h3><p>现在我们将要获取两个日期之间的天数</p>
+<p>采用select语句：</p>
+<pre><code class="hljs sql"><span class="hljs-keyword">select</span> <span class="hljs-keyword">datediff</span>(dd,<span class="hljs-string">'2020-06-01'</span>,<span class="hljs-string">'2020-08-01'</span>) <span class="hljs-keyword">as</span> DiffDate;</code></pre>
 
-2、定义工具类
-    1. 定义一个类 JDBCUtils
-    2. 提供静态代码块加载配置文件，初始化连接池对象
-    3. 提供方法
-        1. 获取连接方法：通过数据库连接池获取连接
-        2. 释放资源
-        3. 获取连接池的方法</code></pre><h6 id="Spring-JDBC"><a href="#Spring-JDBC" class="headerlink" title="Spring JDBC"></a>Spring JDBC</h6><pre><code>* Spring框架对JDBC的简单封装。提供了一个JDBCTemplate对象简化JDBC的开发
-* 步骤：
-    1. 导入jar包
-    2. 创建JdbcTemplate对象。依赖于数据源DataSource
-        * JdbcTemplate template=new JdbcTemplet(ds);</code></pre><!--more-->            
-<pre><code>3. 调用JdbcTemplate的方法完成CRUD的操作
-    * update():执行DML语句增、删、改语句
-    * queryForMap():查询结果,将结果封装为Map集合，将列名作为key，将值为value
-        * 注意：这个方法查询的结果集长度只能是1
-    * queryForList():查询结果,将结果封装为List集合
-        * 注意：将每一条记录封装为一个Map集合，再将Map集合装载到List集合中
-    * query():查询结果,将结果封装为JavaBean对象
-        * 注意：query方法的参数：RowMapper
-            * 一般我们使用BeanPropertyRowMapper实现类，可以完成数据到JavaBean的自动封装
-    * queryForObject():查询结果，将结果封装为对象
-        * 一般用于聚合函数的查询</code></pre>
+<p><strong>结果：</strong></p>
+<table>
+<thead>
+<tr>
+<th>DiffDate</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>61</td>
+</tr>
+</tbody></table>
+
             </article>
             <hr>
             <div>
@@ -252,7 +238,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E8%BF%9E%E6%8E%A5%E6%B1%A0/">连接池</a>
+                      <a class="hover-with-bg" href="/tags/SQL/">SQL</a>
                     
                   </div>
                 
@@ -265,15 +251,15 @@
                   <div class="post-prev col-6">
                     
                     
-                      <a href="/2020/04/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">注解</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </div>
                   <div class="post-next col-6">
                     
+                    
+                      <a href="/2020/11/06/SSM_CRUD/">
+                        <span class="hidden-mobile">SSM_CRUD</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </div>
                 </div>
@@ -434,7 +420,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "连接池的使用&nbsp;",
+        "Datediff()函数的用法（SQL函数）&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
