@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="徐文杰">
   <meta name="keywords" content="">
-  <title>Archives | IT小猪猪</title>
+  <title>IT小猪猪</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -52,7 +52,7 @@
 
 
 
-  <header style="height: 60vh;">
+  <header style="height: 100vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -142,6 +142,10 @@
           </div>
 
           
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
         </div>
       </div>
     </div>
@@ -151,27 +155,73 @@
     
       <div class="container nopadding-md">
         <div class="py-5" id="board"
-          >
+          style=margin-top:0>
           
           <div class="container">
             <div class="row">
               <div class="col-12 col-md-10 m-auto">
                 
 
-<div class="list-group">
-  <p class="h4">11 posts in total.</p>
-  <hr>
-  
+
+  <div class="row mx-auto index-card">
     
-      
-      <p class="h5">2020</p>
     
-    <a href="/2020/06/10/java%E8%99%9A%E6%8B%9F%E6%9C%BA/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">java虚拟机</span>
-      <span style="float: right;">06-10</span>
-    </a>
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2020/04/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" target="_self">
+          <img src="/img/%E7%81%AF%E6%B3%A1.jpg" srcset="/img/loading.gif" alt="注解">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/2020/04/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">注解</a>
+
+      <a href="/2020/04/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="index-excerpt">
+        
+        
+          
+        
+        <div>注解1.概念：说明程序，给计算机看的
+        * jdk1.5之后的新特性
+        * 说明程序
+        * 使用注解：@注解名称
+2、作用分类：
+    * 编写文档：通过代码里标识的注解生成文档【生成文档doc文档】
+    * 代码分析：通过代码里标识的注解对代码进行分析【使用反射】
+    * 编译检查：通过代码里标识的注解让编译器能够实现基本的编译检查【overr</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2020-04-15
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/hello/">hello</a>
+            
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </span>
+  </nav>
   
-</div>
+  <script>
+    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
+      ele.href += '#board';
+    }
+  </script>
 
 
 
@@ -273,7 +323,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "记录生活&学会思考&nbsp;",
+        "面朝大海，春暖花开&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
