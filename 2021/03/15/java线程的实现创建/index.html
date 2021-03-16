@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="徐文杰">
   <meta name="keywords" content="">
-  <title>数据表连接（join） | IT小猪猪</title>
+  <title>java线程的实现/创建 | IT小猪猪</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -142,8 +142,8 @@
               
                 <div class="mt-3 post-meta">
                   <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-                  <time datetime="2021-03-12 00:00">
-                    March 12, 2021 am
+                  <time datetime="2021-03-15 00:00">
+                    March 15, 2021 am
                   </time>
                 </div>
               
@@ -153,7 +153,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    708 字
+                    591 字
                   </span>
                 
 
@@ -163,7 +163,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    8
+                    7
                      分钟
                   </span>
                 
@@ -192,59 +192,67 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <h2 id="一、SQL连接（join）"><a href="#一、SQL连接（join）" class="headerlink" title="一、SQL连接（join）"></a>一、SQL连接（join）</h2><p><strong>SQL join类型：</strong></p>
-<ol>
-<li><strong>inner join：</strong>如果表中至少有一个匹配，则返回行；</li>
-<li><strong>left join：</strong>即使右表没有匹配，也从左表返回所有行；</li>
-<li><strong>right join：</strong>即使左表没有匹配，也从右表返回所以行；</li>
-<li><strong>full join：</strong>只要其中一个表中存在匹配，则返回；</li>
-</ol>
-<h3 id="1、inner-join"><a href="#1、inner-join" class="headerlink" title="1、inner join"></a>1、inner join</h3><p><strong>INNER JOIN 关键字在表中存在至少一个匹配时返回行。</strong></p>
-<h4 id="1-1-语法"><a href="#1-1-语法" class="headerlink" title="1.1 语法"></a>1.1 语法</h4><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> column_name(s)
-<span class="hljs-keyword">FROM</span> table1
-<span class="hljs-keyword">INNER</span> <span class="hljs-keyword">JOIN</span> table2  //<span class="hljs-keyword">INNER</span>可省略
-<span class="hljs-keyword">ON</span> table1.column_name=table2.column_name;</code></pre>
+              <h2 id="1-java线程的实现-创建"><a href="#1-java线程的实现-创建" class="headerlink" title="1. java线程的实现/创建"></a>1. java线程的实现/创建</h2><h3 id="1-1-继承Thread类"><a href="#1-1-继承Thread类" class="headerlink" title="1.1 继承Thread类"></a>1.1 继承Thread类</h3><p>Thread类本质上实现了Runnable接口的一个实例，代表一个线程的实例。启动线程的唯一方法就是通过Thread类的start()实例方法。<strong>start()方法是一个native方法</strong>，它将启动一个新的线程，并执行run()方法。</p>
+<pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyThread</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Thread</span></span>&#123;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span></span>&#123;
+        System,out.println(<span class="hljs-string">"MyThread.run()"</span>);
+    &#125;
+&#125;
+MyThread myThread1 = <span class="hljs-keyword">new</span> MyThread();
+myThread1.start();</code></pre>
 
+<h3 id="1-2-实现Runnable接口"><a href="#1-2-实现Runnable接口" class="headerlink" title="1.2 实现Runnable接口"></a>1.2 实现Runnable接口</h3><p>如果自己的类已经extends另一个类，就无法直接继承Thread类，此时，可以实现一个Runnable接口。</p>
+<pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyThread</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">OtherClass</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Runnable</span></span>&#123;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span></span>&#123;
+        System.out.println(<span class="hljs-string">"MyThread.run()"</span>);
+    &#125;
+    <span class="hljs-comment">//启动 MyThread，需要首先实例化一个 Thread，并传入自己的MyThread 实例：</span>
+    MyThread myThread = <span class="hljs-keyword">new</span> MyThread(); 
+    Thread thread = <span class="hljs-keyword">new</span> Thread(myThread); 
+    thread.start(); 
+    <span class="hljs-comment">//事实上，当传入一个 Runnable target 参数给 Thread 后，Thread 的run()方法就会调用</span>
+    target.run()
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>&#123; 
+     <span class="hljs-keyword">if</span> (target != <span class="hljs-keyword">null</span>) &#123; 
+     target.run(); 
+     &#125; 
+    &#125; 
+&#125;</code></pre>
 
+<h3 id="1-3-实现Callable接口"><a href="#1-3-实现Callable接口" class="headerlink" title="1.3 实现Callable接口"></a>1.3 实现Callable<Class>接口</h3><p>有返回值的任务必须实现 Callable 接口，类似的，无返回值的任务必须Runnable 接口。执行 Callable 任务后，可以获取一个 Future 的对象，在该对象上调用 get 就可以获取到 Callable 任务 返回的 Object 了，再结合线程池接口 ExecutorService 就可以实现传说中有返回结果的多线程 了。</p>
+<pre><code class="hljs java"><span class="hljs-comment">//创建一个线程池</span>
+ExecutorService pool = Executors.newFixedThreadPool(taskSize);
+<span class="hljs-comment">// 创建多个有返回值的任务</span>
+List&lt;Future&gt; list = <span class="hljs-keyword">new</span> ArrayList&lt;Future&gt;(); 
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; taskSize; i++) &#123; 
+    Callable c = <span class="hljs-keyword">new</span> MyCallable(i + <span class="hljs-string">" "</span>); 
+    <span class="hljs-comment">// 执行任务并获取 Future 对象</span>
+    Future f = pool.submit(c); 
+    list.add(f); 
+&#125; 
+<span class="hljs-comment">// 关闭线程池</span>
+pool.shutdown(); 
+<span class="hljs-comment">// 获取所有并发任务的运行结果</span>
+<span class="hljs-keyword">for</span> (Future f : list) &#123; 
+    <span class="hljs-comment">// 从 Future 对象上获取任务的返回值，并输出到控制台</span>
+    System.out.println(<span class="hljs-string">"res："</span> + f.get().toString()); 
+&#125;</code></pre>
 
-<p><img src="/img/sql%E6%88%AA%E5%9B%BE/inner_join.png" srcset="/img/loading.gif" alt=""></p>
-<h4 id="1-2-解释"><a href="#1-2-解释" class="headerlink" title="1.2 解释"></a>1.2 解释</h4><p>INNER JOIN 关键字在表中存在至少一个匹配时返回行。如果 “table1” 表中的行在 “table2” 中没有匹配，则不会列出这些行。</p>
-<h3 id="2、left-join"><a href="#2、left-join" class="headerlink" title="2、left join"></a>2、left join</h3><p>LEFT JOIN 关键字从左表（table1）返回所有的行，即使右表（table2）中没有匹配。如果右表中没有匹配，则结果为 NULL。</p>
-<h4 id="2-1-语法"><a href="#2-1-语法" class="headerlink" title="2.1 语法"></a>2.1 语法</h4><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> column_name(s)
-<span class="hljs-keyword">FROM</span> table1
-<span class="hljs-keyword">LEFT</span> [<span class="hljs-keyword">outer</span>] <span class="hljs-keyword">JOIN</span> table2
-<span class="hljs-keyword">ON</span> table1.column_name=table2.column_name;</code></pre>
+<h3 id="1-4-基于线程池的方式"><a href="#1-4-基于线程池的方式" class="headerlink" title="1.4 基于线程池的方式"></a>1.4 基于线程池的方式</h3><p>线程和数据库连接这些资源都是非常宝贵的资源。那么每次需要的时候创建，不需要的时候销 毁，是非常浪费资源的。那么我们就可以使用缓存的策略，也就是使用线程池。</p>
+<pre><code class="hljs java"><span class="hljs-comment">// 创建线程池</span>
+ExecutorService threadPool = Executors.newFixedThreadPool(<span class="hljs-number">10</span>);
+<span class="hljs-keyword">while</span>(<span class="hljs-keyword">true</span>) &#123;
+    threadPool.execute(<span class="hljs-keyword">new</span> Runnable() &#123; <span class="hljs-comment">// 提交多个线程任务，并执行</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>&#123;
+    	System.out.println(Thread.currentThread().getName() + <span class="hljs-string">" is running .."</span>);
+        <span class="hljs-keyword">try</span> &#123;
+        Thread.sleep(<span class="hljs-number">3000</span>);
+        &#125; <span class="hljs-keyword">catch</span> (InterruptedException e) &#123;
+        e.printStackTrace();
+        &#125;
+&#125;</code></pre>
 
-<p><img src="/img/sql%E6%88%AA%E5%9B%BE/left_join.png" srcset="/img/loading.gif" alt=""></p>
-<h4 id="2-2-解释"><a href="#2-2-解释" class="headerlink" title="2.2 解释"></a>2.2 解释</h4><p>LEFT JOIN 关键字从左表（table1）返回所有的行，即使右表（table2）中没有匹配。</p>
-<h4 id="2-3-on和where区别"><a href="#2-3-on和where区别" class="headerlink" title="2.3 on和where区别"></a>2.3 on和where区别</h4><p>数据库在通过连接两张或多张表来返回记录时，都会生成一张中间的临时表，然后再将这张临时表返回给用户。</p>
-<p><strong>在使用 left jion 时，on 和 where 条件的区别如下：</strong></p>
-<ul>
-<li><strong>on</strong> 条件是在生成临时表时使用的条件，它不管 <strong>on</strong> 中的条件是否为真，都会返回左边表中的记录。</li>
-<li><strong>where</strong> 条件是在临时表生成好后，再对临时表进行过滤的条件。这时已经没有 <strong>left join</strong> 的含义（必须返回左边表的记录）了，条件不为真的就全部过滤掉。</li>
-</ul>
-<h3 id="3、right-join"><a href="#3、right-join" class="headerlink" title="3、right join"></a>3、right join</h3><p>RIGHT JOIN 关键字从右表（table2）返回所有的行，即使左表（table1）中没有匹配。如果左表中没有匹配，则结果为 NULL。</p>
-<h4 id="3-1-语法"><a href="#3-1-语法" class="headerlink" title="3.1 语法"></a>3.1 语法</h4><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> column_name(s)
-<span class="hljs-keyword">FROM</span> table1
-<span class="hljs-keyword">RIGHT</span> <span class="hljs-keyword">JOIN</span> table2
-<span class="hljs-keyword">ON</span> table1.column_name=table2.column_name;</code></pre>
-
-<p><img src="/img/sql%E6%88%AA%E5%9B%BE/right_join.png" srcset="/img/loading.gif" alt=""></p>
-<h4 id="3-2-解释"><a href="#3-2-解释" class="headerlink" title="3.2 解释"></a>3.2 解释</h4><p>RIGHT JOIN 关键字从右表（table2）返回所有的行，即使左表（table1）中没有匹配。</p>
-<h3 id="4、full-join"><a href="#4、full-join" class="headerlink" title="4、full join"></a>4、full join</h3><p>FULL OUTER JOIN 关键字只要左表（table1）和右表（table2）其中一个表中存在匹配，则返回行.</p>
-<p>FULL OUTER JOIN 关键字结合了 LEFT JOIN 和 RIGHT JOIN 的结果。</p>
-<h4 id="4-1-语法"><a href="#4-1-语法" class="headerlink" title="4.1 语法"></a>4.1 语法</h4><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> column_name(s)
-<span class="hljs-keyword">FROM</span> table1
-<span class="hljs-keyword">FULL</span> <span class="hljs-keyword">OUTER</span> <span class="hljs-keyword">JOIN</span> table2
-<span class="hljs-keyword">ON</span> table1.column_name=table2.column_name;</code></pre>
-
-<p><img src="/img/sql%E6%88%AA%E5%9B%BE/full_join.png" srcset="/img/loading.gif" alt=""></p>
-<h4 id="4-2-解释"><a href="#4-2-解释" class="headerlink" title="4.2 解释"></a>4.2 解释</h4><p>FULL OUTER JOIN 关键字返回左表（table1）和右表（table2）中所有的行。如果 “table1” 表中的行在 “table2” 中没有匹配或者 “table2” 表中的行在 “table1” 表中没有匹配，也会列出这些行。</p>
-<h3 id="5、总结"><a href="#5、总结" class="headerlink" title="5、总结"></a>5、总结</h3><p> <strong>A inner join B</strong> 取交集。</p>
-<p> <strong>A left join B</strong> 取 A 全部，B 没有对应的值为 null。</p>
-<p> <strong>A right join B</strong> 取 B 全部 A 没有对应的值为 null。</p>
-<p> <strong>A full outer join B</strong> 取并集，彼此没有对应的值为 null。</p>
-<p>  对应条件在 <strong>on</strong> 后面填写</p>
 
             </article>
             <hr>
@@ -255,7 +263,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/SQL/">SQL</a>
+                      <a class="hover-with-bg" href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>
                     
                   </div>
                 
@@ -268,9 +276,9 @@
                   <div class="post-prev col-6">
                     
                     
-                      <a href="/2021/03/14/limit%E5%92%8Coffset%E7%94%A8%E6%B3%95/">
+                      <a href="/2021/03/16/%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">limit和offset用法</span>
+                        <span class="hidden-mobile">线程的生命周期</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -278,8 +286,8 @@
                   <div class="post-next col-6">
                     
                     
-                      <a href="/2021/03/07/Datediff()%E5%87%BD%E6%95%B0%E7%9A%84%E7%94%A8%E6%B3%95%EF%BC%88SQL%E5%87%BD%E6%95%B0%EF%BC%89/">
-                        <span class="hidden-mobile">Datediff()函数的用法（SQL函数）</span>
+                      <a href="/2021/03/14/limit%E5%92%8Coffset%E7%94%A8%E6%B3%95/">
+                        <span class="hidden-mobile">limit和offset用法</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -443,7 +451,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "数据表连接（join）&nbsp;",
+        "java线程的实现/创建&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
